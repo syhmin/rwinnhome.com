@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="css/afterlogin.css">
+	<link href="https://fonts.googleapis.com/css?family=Josefin+Sans&display=swap" rel="stylesheet">
+	  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css">
+</head>
+<body>
+
+<header>
+	
+<nav>
+	<div class="logo"> <h1 style="font-size: 20px;"> RWINN Site </h1> </div>
+	<div class="menu">
+		<a href="#">Home</a>
+		<a href="#">gallery</a>
+		<a href="https://www.youtube.com/channel/UCwfaAHy4zQUb2APNOGXUCCA" target="_blank">about</a>
+		<a href="https://wa.me/60109893441">WhatsApp</a>
+	</div>
+</nav>
+
+	<main>
+		<section>
+			<h3>Welcome To Rwinn Site</h3>
+			<h1 class="textshadow">RWINN RESELLER <span class="change_content"> </span> <span style="margin-top: -10px;"> | </span> </h1>
+			<p>"Rwinn once is not enough"</p>
+			<a href="#" class="btnone">learn more</a>
+			<a href="https://tiktok.com/@syhmin404" class="btntwo">Tiktok Rwinn</a>
+		</section>
+	</main>
+
+
+</header>
+
+</body>
+<body>
+	<button class="logout" id="logout-button" value="ok">LOG OUT ACCOUNT</button>
+	<script type="module">
+      import { getAuth, signOut } from "https://www.gstatic.com/firebasejs/9.8.2/firebase-auth.js";
+      import { initializeApp } from "https://www.gstatic.com/firebasejs/9.8.2/firebase-app.js";
+
+      const firebaseConfig = {
+        apiKey: "AIzaSyDq5KbK5AD3QuNmShH9fBU8OpTFDtAYkLo",
+        authDomain: "authfirebase-505e0.firebaseapp.com",
+        databaseURL: "https://authfirebase-505e0-default-rtdb.firebaseio.com",
+        projectId: "authfirebase-505e0",
+        storageBucket: "authfirebase-505e0.appspot.com",
+        messagingSenderId: "1052639504272",
+        appId: "1:1052639504272:web:7decf1ada7368612b27515"
+      };
+
+      // Initialize Firebase
+      const app = initializeApp(firebaseConfig);
+      let logoutButton = document.getElementById("logout-button");
+      console.log(logoutButton);
+
+      logoutButton.addEventListener("click", (e) => {
+        const auth = getAuth(app);
+        signOut(auth)
+          .then(() => {
+            alert("sukses logout");
+            location.href = "http://127.0.0.1:5500/index.html?#";
+          })
+          .catch((error) => {});
+      });
+    </script>
+</body>
+</html>
